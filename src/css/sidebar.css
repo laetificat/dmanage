@@ -1,0 +1,19 @@
+.sidebar {
+    height: 100%;
+    max-width: 100px;
+    background-color: #4d4d4d;
+    position: fixed;
+    text-align: center;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 40px;
+    -webkit-user-select: none;
+}
+
+    .sidebar a {
+        color: #FFFFFF;
+    }
+
+        .sidebar a:hover, .sidebar .active, .sidebar a:focus {
+            background-color: #1d1d1d !important;
+        }

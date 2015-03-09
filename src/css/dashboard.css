@@ -1,0 +1,23 @@
+.total-containers {
+    background-color: #e8eef7;
+    height: 150px;
+    text-align: center;
+}
+
+.running-containers {
+    background-color: #e8eef7;
+    height: 150px;
+    text-align: center;
+}
+
+.total-images {
+    background-color: #e8eef7;
+    height: 150px;
+    text-align: center;
+}
+
+.count-box {
+    padding-left: 5px;
+    padding-right: 5px;
+    z-index: 0;
+}

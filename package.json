@@ -1,0 +1,10 @@
+{
+  "name": "DMANAGE",
+  "main": "src/index.html",
+  "window": {
+    "title": "DMANAGE",
+    "toolbar": true,
+    "frame": true,
+    "position": "mouse"
+  }
+}

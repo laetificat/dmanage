@@ -1,0 +1,43 @@
+ul.menu-items {
+    width: 100%;
+    height: 40px;
+    background-color: #4d4d4d;
+    list-style-type: none;
+    margin-bottom: 40px;
+    position: fixed;
+    padding-right: 15px;
+    -webkit-user-select: none;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    z-index: 1;
+}
+
+    li.button {
+        display: inline;
+        float: right;
+        margin-left: 5px;
+    }
+
+        li.button .window-close {
+            color: #ff0700;
+        }
+
+        li.button .window-fullscreen {
+            color: #fff400;
+        }
+
+        li.button .window-minimize {
+            color: #00ff04;
+        }
+
+
+.glyphicon.glyphicon-window-button {
+    margin-bottom: -.8em;
+    overflow: hidden;
+    line-height: normal
+}
+
+.glyphicon.glyphicon-window-button:before {
+    content:"\25cf";
+    font-size: 1.5em;
+}

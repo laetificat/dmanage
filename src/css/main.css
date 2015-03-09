@@ -1,0 +1,19 @@
+body, html {
+    height: 100%;
+}
+
+.container-fluid {
+    padding-left: 125px;
+    padding-top: 40px;
+    overflow: hidden;
+}
+
+.collapsable, .collapsable:hover, .collapsable:active, .collapsable:visited {
+    color: #000;
+    text-decoration: none;
+}
+
+.top-bar {
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+}
