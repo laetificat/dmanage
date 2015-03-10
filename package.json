@@ -3,8 +3,9 @@
   "main": "src/index.html",
   "window": {
     "title": "DMANAGE",
-    "toolbar": true,
-    "frame": true,
+    "transparent": false,
+    "toolbar": false,
+    "frame": false,
     "position": "mouse"
   }
 }

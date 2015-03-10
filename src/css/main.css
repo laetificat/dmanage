@@ -1,11 +1,20 @@
 body, html {
     height: 100%;
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 0px 12px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 0px 12px 0px rgba(50, 50, 50, 0.75);
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
 }
 
 .container-fluid {
     padding-left: 125px;
-    padding-top: 40px;
-    overflow: hidden;
+    padding-top: 55px;
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
 }
 
 .collapsable, .collapsable:hover, .collapsable:active, .collapsable:visited {
@@ -16,4 +25,5 @@ body, html {
 .top-bar {
     -webkit-user-select: none;
     -webkit-app-region: drag;
+    height: 40px;
 }
