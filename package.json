@@ -4,8 +4,8 @@
   "window": {
     "title": "DMANAGE",
     "transparent": false,
-    "toolbar": false,
-    "frame": false,
+    "toolbar": true,
+    "frame": true,
     "position": "mouse"
   }
 }

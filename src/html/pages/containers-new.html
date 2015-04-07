@@ -1,0 +1,56 @@
+<script>
+    $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', 'css/containers.css') );
+</script>
+
+<div class="row">
+    <div id="docker-container-id-here" class="col-md-4">
+        <div class="container-info">
+            <span class="label label-danger container-status">Stopped</span>
+            <p class="created-by">Image: plugwisebv/jenkins</p>
+            <h3 class="container-title">jenkins_server</h3>
+            <p class="container-description">
+                Command: /bin/bash<br />
+                Flags: -i, -t, --name, -d, -p<br />
+                Port(s): 42235<br />
+                <a href="#">More info</a>
+            </p>
+            <div class="container-controls">
+                <a href="#"><span class="glyphicon glyphicon-remove"></span> Remove</a>
+                <a href="#"><span class="glyphicon glyphicon-play"></span> Start</a>
+            </div>
+        </div>
+    </div>
+    <div id="docker-container-id-here1" class="col-md-4">
+        <div class="container-info">
+            <span class="label label-success container-status">Running</span>
+            <p class="created-by">Image: plugwisebv/portal-base</p>
+            <h3 class="container-title">portal_base</h3>
+            <p class="container-description">
+                Command: /bin/bash<br />
+                Flags: -i, -t, --name, -d, -p<br />
+                Port(s): 42235<br />
+                <a href="#">More info</a>
+            </p>
+            <div class="container-controls">
+                <a href="#"><span class="glyphicon glyphicon-stop"></span> Stop</a>
+                <a href="#"><span class="glyphicon glyphicon-pause"></span> Pause</a>
+            </div>
+        </div>
+    </div>
+    <div id="docker-container-id-here2" class="col-md-4">
+        <div class="container-info">
+            <span class="label label-warning container-status">Paused</span>
+            <p class="created-by">Image: plugwisebv/portal</p>
+            <h3 class="container-title">portal</h3>
+            <p class="container-description">
+                Command: /bin/bash<br />
+                Flags: -i, -t, --name, -d, -p<br />
+                Port(s): 42235<br />
+                <a href="#">More info</a>
+            </p>
+            <div class="container-controls">
+                <a href="#"><span class="glyphicon glyphicon-play"></span> Resume</a>
+            </div>
+        </div>
+    </div>
+</div>

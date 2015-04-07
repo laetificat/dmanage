@@ -27,22 +27,32 @@ var req = http.request(options, function(res) {
                 var startStop = null;
                 var deleteAction = null;
                 if (jsonobject[i].Status.indexOf('Up') > -1) {
-                    status = "<span class=\"label label-success\">Running</span>";
+                    status = "Running";
                     startStop = "Stop";
                     deleteAction = "";
                 } else {
-                    status = "<span class=\"label label-danger\">Not running</span>";
+                    status = "Stopped";
                     startStop = "Start";
                     deleteAction = "Delete";
                 }
                 div.innerHTML = div.innerHTML +
-                "<p id=\"" + jsonobject[i].Id + "_parent\"><a class=\"collapsable\" data-toggle=\"collapse\" href=\"#" + jsonobject[i].Id + "\" aria-expanded=\"false\" aria-controls=\"" + jsonobject[i].Id + "\"><b>" + jsonobject[i].Names[0] + "</b>" +
-                "</a> " + status +
-                "<div class=\"collapse\" id =\"" + jsonobject[i].Id + "\">" +
-                "<a class=\"containerAction startStop\" data-action=\"" + startStop + "\" href=\"#\">" + startStop + "</a> <a class=\"containerAction delete\" href=\"#\">" + deleteAction + "</a><br/>" +
-                "Image: " + jsonobject[i].Image +
-                "</div>" +
-                "</p>";
+                "<div id=\"" + jsonobject[i].Id + "\" class=\"col-md-4\">\
+                    <div class=\"container-info\">\
+                        <span class=\"label label-danger container-status\">" + status + "</span>\
+                        <p class=\"created-by\">" + jsonobject[i].Image + "</p>\
+                        <h3 class=\"container-title\">" + jsonobject[i].Names[0] + "</h3>\
+                        <p class=\"container-description\">\
+                        Command: /bin/bash<br />\
+                        Flags: -i, -t, --name, -d, -p<br />\
+                        Port(s): 42235<br />\
+                        <a href=\"#\">More info</a>\
+                        </p>\
+                        <div class=\"container-controls\">\
+                            <a href=\"#\" data-id=\"" + jsonobject[i].Id + "\"class=\"delete\"><span class=\"glyphicon glyphicon-remove\"></span> " + deleteAction + "</a>\
+                            <a href=\"#\" data-id=\"" + jsonobject[i].Id + "\"data-action=\"" + startStop + "\" class=\"startStop\"><span class=\"glyphicon glyphicon-play\"></span> Start</a>\
+                        </div>\
+                    </div>\
+                </div>"
             }
         }
     });
@@ -55,7 +65,7 @@ req.on('error', function(error) {
 req.end();
 
 $(document).on("click", "a.delete", function () {
-    var containerId = $(this).parent().attr("id");
+    var containerId = $(this).attr("data-id").toLowerCase();
 
     var delete_options = {
         hostname: '127.0.0.1',
@@ -84,8 +94,11 @@ $(document).on("click", "a.delete", function () {
 });
 
 $(document).on("click", "a.startStop", function () {
-    var containerId = $(this).parent().attr("id");
+    var containerId = $(this).attr("data-id").toLowerCase();
     var action = $(this).attr("data-action").toLowerCase();
+
+    console.log(action);
+    console.log(containerId);
 
     var startStop_options = {
         hostname: '127.0.0.1',

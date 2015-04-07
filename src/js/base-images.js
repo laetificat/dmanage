@@ -24,7 +24,7 @@ var base_images_req = http.request(base_images_options, function(res) {
         } else {
             var items = "";
             for (var i = 0; i < jsonobject.length; i++) {
-                items = items + "<tr id=\"" + jsonobject[i].Id + "\"><td>" + jsonobject[i].RepoTags + "</td><td><a href=\"#\" class=\"delete\" data-imageId=\"" + jsonobject[i].Id + "\" data-imageName=\"" + jsonobject[i].RepoTags + "\"><span class=\"glyphicon glyphicon-trash\"></span></a></td></tr>";
+                items = items + "<th>Docker options</th><th>Tags</th><th>Extra options</th><th></th><tr id=\"" + jsonobject[i].Id + "\"><td><input type=\"text\"/></td><td>" + jsonobject[i].RepoTags + "</td><td><input type=\"text\"/></td></td><td><a href=\"#\" class=\"delete\" data-imageId=\"" + jsonobject[i].Id + "\" data-imageName=\"" + jsonobject[i].RepoTags + "\"><span class=\"glyphicon glyphicon-trash\"></span></a> <a href=\"#\" class=\"run\" data-imageId=\"" + jsonobject[i].Id + "\" data-imageName=\"" + jsonobject[i].RepoTags + "\"><span class=\"glyphicon glyphicon-play\"></span></a></td></tr>";
             }
             div.innerHTML = "<table class=\"table table-striped\">" + items + "</table>";
         }

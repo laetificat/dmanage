@@ -24,9 +24,20 @@ $("#item-base-images").on("click", function () {
     $(this).addClass("active");
 });
 
+$("#item-build-image").on("click", function () {
+    $("#content").load("html/pages/build.html");
+    change();
+    $(this).addClass("active");
+});
 
 $("#item-docker-hub").on("click", function () {
     $("#content").load("html/pages/docker-hub.html");
+    change();
+    $(this).addClass("active");
+});
+
+$("#item-settings").on("click", function () {
+    $("#content").load("html/pages/settings.html");
     change();
     $(this).addClass("active");
 });

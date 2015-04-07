@@ -9,7 +9,6 @@ ul.menu-items {
     -webkit-user-select: none;
     -webkit-border-top-left-radius: 5px;
     -webkit-border-top-right-radius: 5px;
-    z-index: 1;
     -webkit-app-region: drag;
 }
 
@@ -17,6 +16,7 @@ ul.menu-items {
         display: inline;
         float: right;
         margin-left: 5px;
+        -webkit-app-region: no-drag;
     }
 
         li.button .window-close {
@@ -35,7 +35,7 @@ ul.menu-items {
 .glyphicon.glyphicon-window-button {
     margin-bottom: -.8em;
     overflow: hidden;
-    line-height: normal
+    line-height: normal;
 }
 
 .glyphicon.glyphicon-window-button:before {
