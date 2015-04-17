@@ -110,13 +110,13 @@ $(document).on("click", "a.startStop", function () {
 
     // TODO: Loading indication
     var startStop_request = http.request(startStop_options, function(res) {
-        console.log(res.statusCode);
         res.setEncoding('utf8');
         res.on('data', function(chunk) {
             dockerdata += chunk;
         });
 
         res.on('end', function() {
+            console.log(res.statusCode);
             $("#content").load("html/pages/containers.html");
         });
     });
