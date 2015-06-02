@@ -7,8 +7,8 @@ A simple GUI for docker made in node-webkit, or nw.js.
 - [x] Container overview with stop/start/remove functionality
 - [x] View/run/delete base images
 - [x] Create base images from Dockerfiles
-- [] Integrated Docker Hub
-- [] (configurable) HTTP and Unix connection with Docker
+- [ ] Integrated Docker Hub
+- [ ] (configurable) HTTP and Unix connection with Docker
 
 ### Dashboard
 ![Dashboard](common/images/interface/dashboard.png?raw=true)
