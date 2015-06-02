@@ -1,8 +1,26 @@
+/**
+ * Get and list all the containers and show them in
+ * a nice list complete with run, stop, and remove
+ * buttons.
+ * Author: Kevin Heruer
+ *
+ * This is part of the DMANAGE source, you are free to
+ * use, modify, and republish this code.
+ */
+
+/**
+ * Require all the needed modules.
+ */
 var http = require('http');
 
+/**
+ * Set up the options for the request that will be sent
+ * later to receive all the containers and their information.
+ * @type {{hostname: (XML|string|void), port: (new_config.docker_api_port|*), path: string, method: string, headers: {Content-Type: string}}}
+ */
 var options = {
-    hostname: '127.0.0.1',
-    port: 4243,
+    hostname: config.default.docker_api_url.replace(/.*:\/\//i, ''),
+    port: config.default.docker_api_port,
     path: '/containers/json?all=1',
     method: 'GET',
     headers: { 'Content-Type': 'application/json' }
@@ -10,6 +28,12 @@ var options = {
 
 var dockerdata = '';
 
+/**
+ * Send the request with the options object, if the
+ * response is complete and it contains wanted data,
+ * loop through them and list them with some HTML
+ * to make it pretty.
+ */
 var req = http.request(options, function(res) {
     res.setEncoding('utf8');
     res.on('data', function(chunk) {
@@ -64,12 +88,16 @@ req.on('error', function(error) {
 
 req.end();
 
+/**
+ * When the delete button is pressed, make a call to
+ * the Docker API containing the container ID.
+ */
 $(document).on("click", "a.delete", function () {
     var containerId = $(this).attr("data-id").toLowerCase();
 
     var delete_options = {
-        hostname: '127.0.0.1',
-        port: 4243,
+        hostname: config.default.docker_api_url.replace(/.*:\/\//i, ''),
+        port: config.default.docker_api_port,
         path: '/containers/' + containerId,
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' }
@@ -93,6 +121,12 @@ $(document).on("click", "a.delete", function () {
     delete_request.end();
 });
 
+/**
+ * When the start/stop button is pressed, send a call
+ * to the Docker API containing the container ID.
+ * The start and stop button are both handled in the
+ * same listener.
+ */
 $(document).on("click", "a.startStop", function () {
     var containerId = $(this).attr("data-id").toLowerCase();
     var action = $(this).attr("data-action").toLowerCase();
@@ -101,8 +135,8 @@ $(document).on("click", "a.startStop", function () {
     console.log(containerId);
 
     var startStop_options = {
-        hostname: '127.0.0.1',
-        port: 4243,
+        hostname: config.default.docker_api_url.replace(/.*:\/\//i, ''),
+        port: config.default.docker_api_port,
         path: '/containers/' + containerId + '/' + action,
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }

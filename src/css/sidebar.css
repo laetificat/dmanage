@@ -8,6 +8,7 @@
     padding-right: 0px;
     margin-top: 40px;
     -webkit-user-select: none;
+    z-index: 1;
 }
 
     .sidebar a {
@@ -16,4 +17,13 @@
 
         .sidebar a:hover, .sidebar .active, .sidebar a:focus {
             background-color: #1d1d1d !important;
+        }
+
+        .coming-soon {
+            font-size: 50px;
+            position: absolute;
+            margin-left: -20px;
+            margin-top: 15px;
+            color: red;
+            z-index: 2;
         }
