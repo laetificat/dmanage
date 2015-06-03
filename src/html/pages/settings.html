@@ -1,0 +1,31 @@
+<script>
+    $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', 'css/settings.css') );
+</script>
+
+<div class="row" id="docker-containers">
+    <h1>Settings</h1>
+
+    <h3>General settings</h3>
+    <div id="docker-http-settings">
+        Docker API URL: <input type="text" id="docker-url"/><br>
+        Docker API port: <input type="text" id="docker-port"/><br>
+    </div>
+    <div id="docker-unix-settings">
+        Docker Unix socket: <input type="text" id="docker-unix"/><br>
+    </div>
+    <br>
+    <h3>Dockerhub settings</h3>
+    Dockerhub username: <input type="text" id="hub-username"/><br>
+    Dockerhub password: <input type="password" id="hub-password"/><br>
+    <br>
+    <h3>Docker connection</h3>
+    <input type="radio" name="connectionType" id="connection-http" value="HTTP" > HTTP <br>
+    <input type="radio" name="connectionType" id="connection-unix" value="UNIX_SOCKET" > Unix Socket <br>
+    <br>
+    <br>
+    <button id="save-configuration"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
+    <div id="notification-success" hidden>Configuration saved successfully!</div>
+    <div id="notification-fail" hidden>There was a problem saving your configuration!</div>
+</div>
+
+<script src="js/settings.js"></script>
