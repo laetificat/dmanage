@@ -3,15 +3,17 @@
   "version": "0.5.0",
   "description": "An experimental GUI for Docker.",
   "author": "Kevin Heruer <k.heruer@gmail.com>",
+  "repository": "https://github.com/laetificat/dmanage",
   "main": "src/index.html",
   "window": {
     "title": "DMANAGE",
     "transparent": false,
-    "toolbar": false,
-    "frame": false,
+    "toolbar": true,
+    "frame": true,
     "position": "mouse"
   },
   "dependencies": {
+    "bower": "^1.4.1",
     "request": "^2.55.0",
     "tar-fs": "^1.5.1"
   }

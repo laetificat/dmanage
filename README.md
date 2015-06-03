@@ -33,6 +33,7 @@ Dependencies:
 
 - tar-fs
 - request
+- bower
 
 ## Contributing
 If you spot a bug, want to add a feature, or something else you can help this project become better
