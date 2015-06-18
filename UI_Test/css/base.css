@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+}
+
+.content {
+    margin-left: 80px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.content .row {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 15px;
+}
+
+.content .panel {
+    border-radius: 0;
+}
+
+.label {
+    border-radius: 0;
+}

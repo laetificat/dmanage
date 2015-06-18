@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test UI</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/sidebar.css" />
+    <link rel="stylesheet" type="text/css" href="css/dashboard.css" />
+</head>
+<body>
+<div class="frame">
+    <div class="sidebar">
+        <ul>
+            <li data-toggle="tooltip" data-placement="right" title="Dashboard"><a href="index.html"><i class="fa fa-tachometer fa-fw"></i></a></li>
+            <li class="active" data-toggle="tooltip" data-placement="right" title="Create base image"><a href="#"><i class="fa fa-plus fa-fw"></i></a></li>
+            <li data-toggle="tooltip" data-placement="right" title="Base images"><a href="base-images.html"><i class="fa fa-list fa-fw fa-flip-horizontal"></i></a></li>
+            <li data-toggle="tooltip" data-placement="right" title="Docker Hub"><a href="#"><i class="fa fa-cloud-download fa-fw"></i></a></li>
+            <li data-toggle="tooltip" data-placement="right" title="Settings"><a href="#"><i class="fa fa-cogs fa-fw"></i></a></li>
+        </ul>
+    </div>
+    <div class="container-fluid content">
+        <div class="row">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="tag" placeholder="Image tag">
+                </div>
+                <div class="form-group">
+                    <label for="dockerfile">Dockerfile</label>
+                    <input type="file" id="dockerfile">
+                    <p class="help-block">Select the Dockerfile you want to build.</p>
+                </div>
+                <button type="submit" class="btn btn-default">Build image!</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script type="application/javascript">
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+</html>

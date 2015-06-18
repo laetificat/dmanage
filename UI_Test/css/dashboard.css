@@ -1,0 +1,26 @@
+.dashboard-block, .dashboard-block-middle {
+    background-color: #f4f7fa;
+    color: #5b6778;
+    border-top: solid 1px #e1e6eb;
+    border-bottom: solid 1px #e1e6eb;
+    text-align: center;
+}
+
+.dashboard-block-middle {
+    border-left: solid 1px #e1e6eb;
+    border-right: solid 1px #e1e6eb;
+}
+
+.dashboard-block .count, .dashboard-block-middle .count {
+    font-size: 64px;
+}
+
+.dashboard-block .type, .dashboard-block-middle .type {
+    font-size: 20px;
+}
+
+.docker-container {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 10px;
+}
